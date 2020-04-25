@@ -1,4 +1,4 @@
-FROM node:12 as build
+FROM node:12
 
 WORKDIR /usr/build
 
@@ -7,4 +7,5 @@ COPY cdk.json package.json package-lock.json tsconfig.json tsconfig.webpack.json
 
 RUN npm install -g aws-cdk@1.35.0 && cdk --version \
     && npm install \
-    && cdk synth
+    && npm run build \
+    && npm run bundle

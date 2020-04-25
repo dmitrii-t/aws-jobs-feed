@@ -1,0 +1,7 @@
+---
+version: "3"
+services:
+  synth:
+    build: .
+    command: cdk synth
+    env_file: .env
